@@ -1,31 +1,32 @@
-Role Name
-=========
+Veilid
+======
 
-A brief description of the role goes here.
-
-Requirements
-------------
-
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
-
-Role Variables
---------------
-
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
-
-Dependencies
-------------
-
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+This Ansible role allows you to quickly set up headless Veilid nodes. The target system is configured to automatically update and restart when necessary.
 
 Example Playbook
 ----------------
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
+The Veilid role is quite simple and requires no configuration. An example playbook would be:
 
-    - hosts: servers
-      roles:
-         - { role: username.rolename, x: 42 }
+```
+---
+- hosts: all
+  remote_user: root
+  roles:
+    - veilid
+```
+
+If you're using an inventory, you can run the playbook with:
+
+```
+ansible-playbook -i path/to/your/inventory path/to/your/playbook.yml
+```
+
+If you don't want to use an inventory, you can run the playbook explicity against a number of targets (note that if running against a single target, you need the comma after IP):
+
+```
+ansible-playbook -i 68.133.118.91, path/to/your/playbook.yml
+```
 
 License
 -------
@@ -35,4 +36,4 @@ BSD
 Author Information
 ------------------
 
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+This role has been developed by Pedro Nunes (Solace-10). If you have issues or suggestions regarding this role, please use the GitHub issues page.
