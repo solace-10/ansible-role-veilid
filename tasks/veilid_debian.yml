@@ -1,13 +1,14 @@
-- name: Adding Veilid key
-  ansible.builtin.shell: "wget -O- https://packages.veilid.net/gpg/veilid-packages-key.public | gpg --dearmor --yes -o /usr/share/keyrings/veilid-packages-keyring.gpg"
-
 - name: Configuring Veilid repository
-  template:
-    src: veilid.list.j2
-    dest: "/etc/apt/sources.list.d/veilid.list"
-    owner: "root"
-    group: "root"
-    mode: 0644
+  block:
+    - name: Adding Veilid apt signing key
+      ansible.builtin.apt_key:
+        id: 516C76D1E372C5C96EE54E22AE0E059BC64CD052
+        url: https://packages.veilid.net/gpg/veilid-packages-key.public
+        keyring: /usr/share/keyrings/veilid-packages-keyring.gpg
+    - name: Adding Veilid repository
+      ansible.builtin.apt_repository:
+        repo: "deb [arch=amd64 signed-by=/usr/share/keyrings/veilid-packages-keyring.gpg] https://packages.veilid.net/apt stable main"
+        state: present
 
 - name: Update system
   apt:

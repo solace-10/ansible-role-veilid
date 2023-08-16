@@ -1,22 +1,4 @@
-- name: Restart Veilid service
-  systemd:
-    name: veilid-server
-    daemon-reload: yes
-    state: restarted
-
-- name: Reload Veilid service
-  systemd:
-    name: veilid-server
-    daemon-reload: yes
-    state: reloaded
-
-- name: Stop Veilid service
-  systemd:
-    name: veilid-server
-    daemon-reload: yes
-    state: stopped
-
-- name: Launching Tor service
+- name: Starting Veilid service
   systemd:
     name: veilid-server
     daemon-reload: yes
