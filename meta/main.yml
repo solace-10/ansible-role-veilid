@@ -1,26 +1,10 @@
 galaxy_info:
   role_name: veilid
   author: Solace-10
-  description: your role description
+  description: Deploy Veilid headless nodes
   company: none
-
-  # If the issue tracker for your role is not on github, uncomment the
-  # next line and provide a value
-  # issue_tracker_url: http://example.com/issue/tracker
-
-  # Choose a valid license ID from https://spdx.org - some suggested licenses:
-  # - BSD-3-Clause (default)
-  # - MIT
-  # - GPL-2.0-or-later
-  # - GPL-3.0-only
-  # - Apache-2.0
-  # - CC-BY-4.0
-  license: GPL-2.0-or-later
-
+  license: BSD-3-Clause
   min_ansible_version: 2.1
-
-  # If this a Container Enabled role, provide the minimum Ansible Container version.
-  # min_ansible_container_version:
 
   #
   # Provide a list of supported platforms, and for each platform a list of versions.
@@ -32,10 +16,13 @@ galaxy_info:
   - name: Debian
     versions:
     - bookworm
+    - bullseye
+    - buster
+  - name: Ubuntu
+    versions:
+    - jammy
 
   galaxy_tags:
     - veilid
 
 dependencies: []
-  # List your role dependencies here, one per line. Be sure to remove the '[]' above,
-  # if you add dependencies to this list.

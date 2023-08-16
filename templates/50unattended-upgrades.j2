@@ -1,3 +1,14 @@
+{% if ansible_distribution == 'Ubuntu' %}
+
+Unattended-Upgrade::Allowed-Origins {
+    "${distro_id}:${distro_codename}-security";
+    "Veilid:${distro_codename}";
+};
+Unattended-Upgrade::Package-Blacklist {
+};
+
+{% else %}
+
 Unattended-Upgrade::Origins-Pattern {
     "origin=Debian,codename=${distro_codename},label=Debian-Security";
     "origin=Veilid";
@@ -5,3 +16,5 @@ Unattended-Upgrade::Origins-Pattern {
 Unattended-Upgrade::Package-Blacklist {
 };
 Unattended-Upgrade::Automatic-Reboot "true";
+
+{% endif %}
