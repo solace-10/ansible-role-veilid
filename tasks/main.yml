@@ -1,0 +1,16 @@
+---
+# System preparation
+- import_tasks: system_debian.yml
+  when: ansible_os_family == 'Debian'
+#- import_tasks: system_rhel.yml
+#  when: ansible_os_family == 'RedHat'
+
+# Veilid installation
+- import_tasks: veilid_debian.yml
+  when: ansible_os_family == 'Debian'
+#- import_tasks: veilid_rhel.yml
+#  when: ansible_os_family == 'RedHat'
+
+# Start service
+- import_tasks: service_linux.yml
+  when: ansible_os_family in ['Debian', 'RedHat']

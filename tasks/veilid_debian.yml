@@ -1,0 +1,24 @@
+- name: Adding Veilid key
+  ansible.builtin.shell: "wget -O- https://packages.veilid.net/gpg/veilid-packages-key.public | gpg --dearmor --yes -o /usr/share/keyrings/veilid-packages-keyring.gpg"
+
+- name: Configuring Veilid repository
+  template:
+    src: veilid.list.j2
+    dest: "/etc/apt/sources.list.d/veilid.list"
+    owner: "root"
+    group: "root"
+    mode: 0644
+
+- name: Update system
+  apt:
+    name: "*"
+    update_cache: yes
+    state: latest
+
+- name: Installing Veilid packages
+  apt:
+    name: 
+      - veilid-server 
+      - veilid-cli
+    update_cache: yes
+    state: latest
