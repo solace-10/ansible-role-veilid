@@ -13,4 +13,5 @@
 
 # Start service
 - import_tasks: service_linux.yml
-  when: ansible_os_family in ['Debian', 'RedHat']
+  when: ansible_os_family in ['Debian']
+#  when: ansible_os_family in ['Debian', 'RedHat']
