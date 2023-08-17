@@ -3,6 +3,11 @@ Veilid
 
 This Ansible role allows you to quickly set up headless Veilid nodes. The target system is configured to automatically update and restart when necessary.
 
+Supported platforms
+-------------------
+
+This role has been tested against Debian (Bookworm, Bullseye, Buster) and Ubuntu (Jammy). 
+
 Example Playbook
 ----------------
 
