@@ -13,7 +13,7 @@ The Veilid role is quite simple and requires no configuration. An example playbo
 - hosts: all
   remote_user: root
   roles:
-    - veilid
+    - solace_10.veilid
 ```
 
 If you're using an inventory, you can run the playbook with:
@@ -22,7 +22,7 @@ If you're using an inventory, you can run the playbook with:
 ansible-playbook -i path/to/your/inventory path/to/your/playbook.yml
 ```
 
-If you don't want to use an inventory, you can run the playbook explicity against a number of targets (note that if running against a single target, you need the comma after IP):
+If you don't want to use an inventory, you can run the playbook explicity against one or more targets (note that if running against a single target, you need the comma after IP):
 
 ```
 ansible-playbook -i 68.133.118.91, path/to/your/playbook.yml
@@ -31,7 +31,7 @@ ansible-playbook -i 68.133.118.91, path/to/your/playbook.yml
 License
 -------
 
-BSD
+This role is under the MIT license.
 
 Author Information
 ------------------
