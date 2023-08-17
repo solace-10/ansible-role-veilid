@@ -3,3 +3,4 @@
     name: veilid-server
     daemon-reload: yes
     state: started
+    enabled: true
