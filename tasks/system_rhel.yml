@@ -1,0 +1,13 @@
+- name: Installing system packages
+  ansible.builtin.dnf:
+    name: 
+    - dnf-automatic
+    - yum-utils
+    state: latest
+
+- name: Starting automatic updates service 
+  systemd:
+    name: dnf-automatic-install.timer
+    daemon-reload: yes
+    state: started
+    enabled: true

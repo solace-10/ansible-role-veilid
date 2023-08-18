@@ -2,4 +2,4 @@
 - hosts: all
   remote_user: root
   roles:
-    - veilid
+    - solace_10.veilid

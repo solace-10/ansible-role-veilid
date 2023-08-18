@@ -1,0 +1,9 @@
+- name: Adding Veilid repository
+  ansible.builtin.shell: yum-config-manager --add-repo https://packages.veilid.net/rpm/veilid-rpm-repo.repo
+
+- name: Installing Veilid packages
+  ansible.builtin.dnf:
+    name:
+      - veilid-server
+      - veilid-cli
+    state: latest
