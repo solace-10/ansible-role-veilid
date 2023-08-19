@@ -6,4 +6,5 @@
     name:
       - veilid-server
       - veilid-cli
+    update_cache: true
     state: latest
