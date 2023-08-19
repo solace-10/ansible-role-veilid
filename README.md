@@ -6,7 +6,7 @@ This Ansible role allows you to quickly set up headless Veilid nodes. The target
 Supported platforms
 -------------------
 
-This role has been tested against Debian (Bookworm, Bullseye, Buster) and Ubuntu (Jammy). 
+This role has been tested against Debian (Bookworm, Bullseye, Buster), Ubuntu (Jammy) and Fedora 38. 
 
 Example Playbook
 ----------------
