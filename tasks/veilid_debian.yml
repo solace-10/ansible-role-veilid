@@ -1,5 +1,11 @@
 - name: Configuring Veilid repository
   block:
+    - name: Installing pre-requisites
+      apt:
+        name: 
+          - gpg
+        update_cache: yes
+        state: latest
     - name: Adding Veilid apt signing key
       ansible.builtin.apt_key:
         id: 516C76D1E372C5C96EE54E22AE0E059BC64CD052
